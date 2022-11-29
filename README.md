@@ -32,3 +32,13 @@
 * The attacker sent a fake token to user's wallets, then approved that token for sale on Uniswap which would then transfer $RUNE from the user's wallet to the attacker's wallet.
 * This was possible because THORChain used `tx.origin` for transfer checks instead of `msg.sender`.
 * Link to article about [THORChain Hack #2](https://rekt.news/thorchain-rekt2/)
+
+## Prevention
+* This type of attack can be stopped by using `msg.sender` instead of `tx.origin`.
+* Example code:
+```
+function setOwner(address newOwner) public {
+    require(msg.sender == owner, "Not owner" );
+    owner = newOwner;
+}
+```
