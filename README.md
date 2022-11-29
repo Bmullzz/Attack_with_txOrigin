@@ -15,3 +15,8 @@
 ## DOS (Denial Of Service) Attack on a Smart Contract
 ### What will happen?
 * There will be 2 smart contracts - `Good.sol` and `Attack.sol`.  Initially, the owner of `Good.sol` will be a good user.  Using the attack function, `Attack.sol` will be able to change the owner of `Good.sol` to itself thus denying the good user control of `Good.sol`.
+
+### The Attack
+* Refer to `test/attack.js` for the following explanation of the attack.
+* Initially, `addr1` will deploy `Good.sol` and will be the owner.
+* The attacker will somehow fool the user that controls the private keys of `addr1` to call the `attack` function within `Attack.sol`.
