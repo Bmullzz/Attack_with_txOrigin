@@ -25,3 +25,4 @@
 * After verifying the owner, it sets the owner to `Attack.sol`.
 
 ## Running the Code
+* Run the test locally using `npx hardhat test`.
