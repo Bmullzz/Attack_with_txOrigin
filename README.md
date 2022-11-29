@@ -26,3 +26,9 @@
 
 ## Running the Code
 * Run the test locally using `npx hardhat test`.
+
+## Real Life Example
+* THORChain users lose millions in $RUNE due to an attacker getting approvals using this attack vector.
+* The attacker sent a fake token to user's wallets, then approved that token for sale on Uniswap which would then transfer $RUNE from the user's wallet to the attacker's wallet.
+* This was possible because THORChain used `tx.origin` for transfer checks instead of `msg.sender`.
+* Link to article about [THORChain Hack #2](https://rekt.news/thorchain-rekt2/)
