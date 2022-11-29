@@ -12,12 +12,6 @@
 * For example, if `User` calls `Contract A`, which then calls `Contract B` within the same transaction, `msg.sender` will be equal to `Contract A` when checked from within `Contract B`. 
 * `tx.origin` will be the `User` regardless of where you check it from.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+## DOS (Denial Of Service) Attack on a Smart Contract
+### What will happen?
+* There will be 2 smart contracts - `Good.sol` and `Attack.sol`.  Initially, the owner of `Good.sol` will be a good user.  Using the attack function, `Attack.sol` will be able to change the owner of `Good.sol` to itself thus denying the good user control of `Good.sol`.
